@@ -1,0 +1,29 @@
+image:
+  file: .gitpod.Dockerfile
+
+# exposed ports
+ports:
+- port: 3306 # MySQL
+  onOpen: ignore
+- port: 8080
+  onOpen: open-preview
+  # onOpen: ignore
+
+# start up tasks
+tasks:
+  # init: Will be executed one time when creating a workspace, command: will be exected each time you open workspace
+  - init: |
+      composer update --no-interaction --prefer-dist
+      mysql -e "CREATE DATABASE IF NOT EXISTS yalitresoredb_test;"
+      mysql -e "CREATE DATABASE IF NOT EXISTS yalitresoredb;"
+      chmod +x ./yii
+      chmod +x ./tests/bin/yii
+      php artisan migrate
+      chmod +x admin-create.bat
+      ./admin-create.bat
+      mkdir ./web/uploads
+      chmod -R 775 ./web/uploads
+    command: |
+      php artisan serve
+  # - command: gp await-port 8080 && ./vendor/bin/codecept run --coverage
+  - command: gp await-port 8080 && gp preview $(gp url 8080)
