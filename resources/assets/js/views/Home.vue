@@ -9,9 +9,8 @@
         <Ads />
         <ListProducts />
         <Brands />
-        <HotTreding />
         <Ads2 />
-        <Ads3 />
+       
       </div>
     </div>
 
@@ -23,7 +22,6 @@ import Nav from "./Nav";
 import HeroCard from "./HeroCard";
 import Ads from "./Ads";
 import Ads2 from "./Ads2";
-import Ads3 from "./Ads3";
 import ListProducts from "./ListPorducts";
 import Footer from "./Footer";
 import Brands from "./Brands";
@@ -43,11 +41,9 @@ export default {
     HeroCard,
     Ads,
     Ads2,
-    Ads3,
     ListProducts,
     Footer,
     Brands,
-    HotTreding,
   },
   mounted() {
     this.setDefaults();

@@ -5,8 +5,7 @@
         class="
           nov-productlist
           productlist-liststyle
-          col-xl-4 col-lg-4 col-md-4 col-xs-12 col-md-12
-        "
+          col-xl-4 col-lg-4 col-md-4 col-xs-12 col-md-12"
       >
         <div class="block block-product clearfix">
           <h2 class="title_block">SMARTPHONE</h2>
