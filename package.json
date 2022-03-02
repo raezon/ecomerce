@@ -16,5 +16,8 @@
         "jquery": "^3.5",
         "laravel-mix": "^2.0",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "vue-router": "^3.5.2"
     }
 }
